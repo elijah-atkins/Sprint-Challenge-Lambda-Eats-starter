@@ -46,7 +46,7 @@ const Form = () => {
       <form onSubmit={formSubmit}>
         <label htmlFor="name" />
         Name
-        <input id="name" type="text" name="name" minLength="2" onChange={handleChanges} value={pizza.name}/>
+        <input id="name" data-cy="name" type="text" name="name" minLength="2" onChange={handleChanges} value={pizza.name}/>
         <label htmlFor="size" />
         How big you want it?
         <select id="size" name="size" onChange={handleChanges}>
@@ -57,19 +57,19 @@ const Form = () => {
           <option value="X-Large">X-Large</option>
         </select>
         <label htmlFor="pepperoni" className="pepperoni">
-          <input type="checkbox" name="pepperoni" onChange={handleChanges}/>
+          <input type="checkbox" name="pepperoni" data-cy="pepperoni" onChange={handleChanges}/>
           Pepperoni
         </label>
         <label htmlFor="sausage" className="sausage">
-          <input type="checkbox" name="sausage" onChange={handleChanges}/>
+          <input type="checkbox" name="sausage" data-cy="sausage" onChange={handleChanges}/>
           Sausage
         </label>
         <label htmlFor="blkOlives" className="blkOlives">
-          <input type="checkbox" name="blkOlives" onChange={handleChanges}/>
+          <input type="checkbox" name="blkOlives" data-cy="blkOlives" onChange={handleChanges}/>
           Black Olives
         </label>
         <label htmlFor="garlic" className="garlic">
-          <input type="checkbox" name="garlic" onChange={handleChanges}/>
+          <input type="checkbox" name="garlic" data-cy="garlic" onChange={handleChanges}/>
           Roasted Garlic
         </label>
         <label htmlFor="comments" className="comments">

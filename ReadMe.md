@@ -39,6 +39,8 @@ Follow these steps to set up and work on your project:
 -npm install
 -npm i less
 -npm i react-router-dom
+-npm i axios
+-npm install cypress --save-dev
 
 ### Task 2: Minimum Viable Product
 
@@ -51,15 +53,15 @@ Your MVP should include, at a minimum, the following components.
 - [x] Dropdown form component for pizza size
 - [x] Checklist form component for toppings - at least 4 (hint: name each separately!)
 - [x] Text input form component for special instructions
-- [ ] An Add to Order button that submits form and returns a database record of name, pizza size, sauce, and special instructions
+- [x] An Add to Order button that submits form and returns a database record of name, pizza size, sauce, and special instructions -- (npm i axios)
 
 #### Testing MVP
 
 Implement the following tests in Cypress:
 
-- [ ] test that you can add text to the box
-- [ ] test that you can select multiple toppings
-- [ ] test that you can submit the form
+- [x] test that you can add text to the box
+- [x] test that you can select multiple toppings
+- [x] test that you can submit the form
 
 You may use the following wireframe (also in a folder above) as guidance as you design your site but it is not required that you do so.
 
