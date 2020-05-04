@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Navbar = ({ history }) => {
-    console.log(history)
 
     return(
         <div className="navbar">
@@ -23,4 +22,4 @@ const Navbar = ({ history }) => {
     )
 }
 
-export default Navbar
+export default Navbar;

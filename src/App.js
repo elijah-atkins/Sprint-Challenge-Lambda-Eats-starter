@@ -4,8 +4,9 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import Navbar from './Navbar';
-import Splash from './Splash';
+import Navbar from './components/Navbar';
+import Splash from './components/Splash';
+import Form from './components/Form';
 
 const App = () => {
   const history = useHistory();
@@ -15,7 +16,7 @@ const App = () => {
       <Switch>
         <Route path ="/pizza">
 
-          <div><p>Pizza</p></div>
+          <Form />
         </Route>
         <Route path="/">
         <Splash history={history}/>
