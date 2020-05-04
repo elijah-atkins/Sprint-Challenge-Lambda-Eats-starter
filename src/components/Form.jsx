@@ -19,11 +19,11 @@ const Form = () => {
 
         axios
           .post("https://reqres.in/api/users", pizza)
-          .then(res => {
+          .then(response => {
 
-            setPost(res.data); // get just the form data from the REST api
+            setPost(response.data); // get just the form data from the REST api
 
-            console.log("success", res.data, post);
+            console.log("success", response.data, post);
             // reset form if successful
             setPizza(initialPizza);
 
@@ -57,19 +57,19 @@ const Form = () => {
           <option value="X-Large">X-Large</option>
         </select>
         <label htmlFor="pepperoni" className="pepperoni">
-          <input type="checkbox" name="pepperoni" data-cy="pepperoni" onChange={handleChanges}/>
+          <input type="checkbox" name="pepperoni" data-cy="pepperoni" checked={pizza.pepperoni} onChange={handleChanges}/>
           Pepperoni
         </label>
         <label htmlFor="sausage" className="sausage">
-          <input type="checkbox" name="sausage" data-cy="sausage" onChange={handleChanges}/>
+          <input type="checkbox" name="sausage" data-cy="sausage" checked ={pizza.sausage} onChange={handleChanges}/>
           Sausage
         </label>
         <label htmlFor="blkOlives" className="blkOlives">
-          <input type="checkbox" name="blkOlives" data-cy="blkOlives" onChange={handleChanges}/>
+          <input type="checkbox" name="blkOlives" data-cy="blkOlives" checked={pizza.blkOlives} onChange={handleChanges}/>
           Black Olives
         </label>
         <label htmlFor="garlic" className="garlic">
-          <input type="checkbox" name="garlic" data-cy="garlic" onChange={handleChanges}/>
+          <input type="checkbox" name="garlic" data-cy="garlic" checked={pizza.garlic} onChange={handleChanges}/>
           Roasted Garlic
         </label>
         <label htmlFor="comments" className="comments">
@@ -80,6 +80,7 @@ const Form = () => {
             Submit
         </button>
       </form>
+      <pre>{JSON.stringify(post, null, 2)}</pre>
     </div>
   );
 };
