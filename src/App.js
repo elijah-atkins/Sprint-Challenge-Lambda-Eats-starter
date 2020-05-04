@@ -4,6 +4,7 @@ import {
   Route,
 } from "react-router-dom";
 import Navbar from './Navbar';
+import Splash from './Splash';
 
 const App = () => {
   return (
@@ -11,10 +12,11 @@ const App = () => {
       <Navbar />
       <Switch>
         <Route path ="/pizza">
+
           <div><p>Pizza</p></div>
         </Route>
         <Route path="/">
-          <div><p>Hello World</p></div>
+        <Splash />
         </Route>
       </Switch>
     </>
