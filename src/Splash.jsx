@@ -1,8 +1,7 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 
-const Splash = () => {
-    const history = useHistory();
+const Splash = ({history}) => {
+
     return(
         <div className="pizza-splash">
             <button onClick={()=>{

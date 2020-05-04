@@ -1,8 +1,8 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 
-const Navbar = () => {
-    const history = useHistory();
+const Navbar = ({ history }) => {
+    console.log(history)
+
     return(
         <div className="navbar">
             <h1 className="Logo">Lambda Eats</h1>
