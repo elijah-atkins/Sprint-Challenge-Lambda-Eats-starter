@@ -1,16 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
 const Form = () => {
+    const initialPizza = {
+        name: "",
+        size: "",
+        pepperoni: "",
+        sausage: "",
+        blkOlives: "",
+        garlic: "",
+        comments: ""
+      };
+    const [post, setPost] = useState([]);
+    const [pizza, setPizza] = useState(initialPizza);
+
+    const formSubmit = e => {
+        e.preventDefault();
+
+        axios
+          .post("https://reqres.in/api/users", pizza)
+          .then(res => {
+
+            setPost(res.data); // get just the form data from the REST api
+
+            console.log("success", res.data, post);
+            // reset form if successful
+            setPizza(initialPizza);
+
+          })
+          .catch(err => console.log(err.response));
+      };
+      const handleChanges = e => {
+        const newPizza = {
+            ...pizza,
+            [e.target.name]:
+            e.target.type === "checkbox" ? e.target.checked : e.target.value
+        };
+        setPizza(newPizza);
+
+    
+      };
   return (
     <div className="pizza-order-form">
       <h1>Order Some Pizza Y'all</h1>
-      <form>
+      <form onSubmit={formSubmit}>
         <label htmlFor="name" />
         Name
-        <input id="name" type="text" name="name" minLength="2" />
+        <input id="name" type="text" name="name" minLength="2" onChange={handleChanges} value={pizza.name}/>
         <label htmlFor="size" />
         How big you want it?
-        <select id="size" name="size">
+        <select id="size" name="size" onChange={handleChanges}>
           <option value="">--Please choose size--</option>
           <option value="Small">Smallr</option>
           <option value="Medium">Medium</option>
@@ -18,24 +57,24 @@ const Form = () => {
           <option value="X-Large">X-Large</option>
         </select>
         <label htmlFor="pepperoni" className="pepperoni">
-          <input type="checkbox" name="pepperoni" />
+          <input type="checkbox" name="pepperoni" onChange={handleChanges}/>
           Pepperoni
         </label>
         <label htmlFor="sausage" className="sausage">
-          <input type="checkbox" name="sausage" />
+          <input type="checkbox" name="sausage" onChange={handleChanges}/>
           Sausage
         </label>
-        <label htmlFor="blk-olives" className="blk-olives">
-          <input type="checkbox" name="blk-olives" />
+        <label htmlFor="blkOlives" className="blkOlives">
+          <input type="checkbox" name="blkOlives" onChange={handleChanges}/>
           Black Olives
         </label>
         <label htmlFor="garlic" className="garlic">
-          <input type="checkbox" name="garlic" />
+          <input type="checkbox" name="garlic" onChange={handleChanges}/>
           Roasted Garlic
         </label>
         <label htmlFor="comments" className="comments">
             Special Instructions
-            <textarea name="comments" />
+            <textarea name="comments" onChange={handleChanges}/>
         </label>
         <button type="submit">
             Submit
