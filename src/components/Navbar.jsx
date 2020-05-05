@@ -3,8 +3,8 @@ import React from 'react';
 const Navbar = ({ history }) => {
 
     return(
-        <div className="navbar">
-            <h1 className="Logo">Lambda Eats</h1>
+        <nav className="navbar">
+            <h1 className="logo">Lambda Eats</h1>
             <ul className="nav-links">
                 <li className="nav-item">
                     <button 
@@ -18,7 +18,7 @@ const Navbar = ({ history }) => {
                     <button className="nav-button-help">Help</button>
                 </li>
             </ul>
-        </div>
+        </nav>
     )
 }
 

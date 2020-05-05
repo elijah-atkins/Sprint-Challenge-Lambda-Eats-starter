@@ -4,7 +4,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import "./less/index.less"
+import "./scss/index.scss"
 import Navbar from './components/Navbar';
 import Splash from './components/Splash';
 import Form from './components/Form';

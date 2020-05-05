@@ -37,7 +37,7 @@ Follow these steps to set up and work on your project:
 - [x] Push commits: git push origin `<firstName-lastName>`.
 
 -npm install
--npm i less
+-npm i node-sass
 -npm i react-router-dom
 -npm i axios
 -npm install cypress --save-dev

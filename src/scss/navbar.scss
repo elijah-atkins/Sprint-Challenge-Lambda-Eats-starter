@@ -1,0 +1,36 @@
+.navbar {
+  width: 100vw;
+  height: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: $white;
+  h1{
+    padding: 1.2rem;
+    font-size: 1.6rem;
+    text-transform: uppercase; 
+    color: $logo-color;
+  }
+  ul {
+    padding: 1rem;
+    
+    li {
+    display:inline-block;
+    background-color:#eee;
+    list-style-type:none;
+
+    }
+  }
+  .nav-button-help {
+
+    color:$white;
+    background-color:$black;
+    padding: .5rem;
+  }
+  .nav-button-home {
+
+    color:$black;
+    background-color:$white;
+    padding: .5rem;
+  }
+}
